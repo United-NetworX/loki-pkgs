@@ -47,10 +47,10 @@ jobs:
         run: sudo apt-get install -y libsystemd-dev
 
       - name: Build loki
-        run: cd loki && make loki
+        run: go build ./loki/cmd/loki
 
       - name: Build promtail
-        run: cd loki && make promtail
+        run: go build ./loki/clients/cmd/promtail
 
       # Build Loki DEB Package
       - name: Build Linux DEB Packages
