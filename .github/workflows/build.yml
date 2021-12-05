@@ -46,14 +46,14 @@ jobs:
       - name: Install libsystemd-dev
         run: sudo apt-get install -y libsystemd-dev
 
-      - name: Get GO Deps
-        run: cd loki && go get
+      - name: CD
+        run: cd loki
 
       - name: Build loki
-        run: go build ./loki/cmd/loki
+        run: go build ./cmd/loki
 
       - name: Build promtail
-        run: go build ./loki/clients/cmd/promtail
+        run: go build ./clients/cmd/promtail
 
       # Build Loki DEB Package
       - name: Build Linux DEB Packages
