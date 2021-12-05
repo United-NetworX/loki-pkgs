@@ -50,13 +50,13 @@ jobs:
         run: cd loki
 
       - name: Build loki
-        run: go build ./cmd/loki
+        run: go build $(pwd)/cmd/loki
 
       - name: Build promtail
-        run: go build ./clients/cmd/promtail
+        run: go build $(pwd)/clients/cmd/promtail
 
       # Build Loki DEB Package
-      - name: Build Linux DEB Packages
+      - name: Build loki Linux DEB Packages
         uses: kentik/pkg@v1.0.0-rc8
         with:
           name: loki
@@ -66,7 +66,7 @@ jobs:
           package: loki-package.yml
 
       # Build Loki RPM Package
-      - name: Build Linux PKG Packages
+      - name: Build loki Linux PKG Packages
         uses: kentik/pkg@v1.0.0-rc8
         with:
           name: loki
@@ -76,7 +76,7 @@ jobs:
           package: loki-package.yml
 
       # Build promtail DEB Package
-      - name: Build Linux DEB Packages
+      - name: Build promtail Linux DEB Packages
         uses: kentik/pkg@v1.0.0-rc8
         with:
           name: promtail
@@ -86,7 +86,7 @@ jobs:
           package: promtail-package.yml
 
       # Build promtail RPM Package
-      - name: Build Linux PKG Packages
+      - name: Build promtail Linux PKG Packages
         uses: kentik/pkg@v1.0.0-rc8
         with:
           name: promtail
