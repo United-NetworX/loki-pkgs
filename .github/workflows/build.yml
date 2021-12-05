@@ -46,6 +46,9 @@ jobs:
       - name: Install libsystemd-dev
         run: sudo apt-get install -y libsystemd-dev
 
+      - name: Get GO Deps
+        run: cd loki && go get
+
       - name: Build loki
         run: go build ./loki/cmd/loki
 
