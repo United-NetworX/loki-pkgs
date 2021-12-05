@@ -50,10 +50,10 @@ jobs:
         run: cd loki
 
       - name: Build loki
-        run: go build $(pwd)/cmd/loki
+        run: go build cmd/loki
 
       - name: Build promtail
-        run: go build $(pwd)/clients/cmd/promtail
+        run: go build clients/cmd/promtail
 
       # Build Loki DEB Package
       - name: Build loki Linux DEB Packages
