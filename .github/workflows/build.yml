@@ -47,6 +47,7 @@ jobs:
         run: sudo apt-get install -y libsystemd-dev
 
       - name: Build loki
+        run: ls
         run: go build cmd/loki
 
       - name: Build promtail
