@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/bin/chmod +x /usr/bin/promtail

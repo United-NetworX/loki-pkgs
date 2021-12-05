@@ -1,0 +1,24 @@
+meta:
+  description: Grafana promtail
+  vendor: grafana
+  maintainer: BackInBash
+files:
+  "/usr/bin/promtail":
+    file: promtail
+    mode: "0755"
+    user: "root"
+  "/etc/loki/promtail.yml":
+    file: ./loki/clients/cmd/promtail/promtail-local-config.yaml
+    mode: "0644"
+    user: "promtail"
+    keep: true
+units:
+  - systemd/promtail.service
+scripts:
+  "post-install": scripts/post_install_promtail
+user: promtail
+depends:
+  deb-dep:
+    - libsystemd-dev
+  rpm-dep:
+    - systemd-devel

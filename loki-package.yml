@@ -1,0 +1,19 @@
+meta:
+  description: Grafana Loki
+  vendor: grafana
+  maintainer: BackInBash
+files:
+  "/usr/bin/loki":
+    file: loki
+    mode: "0755"
+    user: "root"
+  "/etc/loki/loki.yml":
+    file: ./loki/cmd/loki/loki-local-config.yaml
+    mode: "0644"
+    user: "loki"
+    keep: true
+units:
+  - systemd/loki.service
+scripts:
+  "post-install": scripts/post_install_loki
+user: loki
