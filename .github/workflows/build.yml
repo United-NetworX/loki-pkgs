@@ -44,10 +44,10 @@ jobs:
           path: loki
       
       - name: Build loki
-        run: cd loki && go build ./cmd/loki
+        run: cd loki && go build cmd/loki
 
       - name: Build promtail
-        run: cd loki && go build ./clients/cmd/promtail
+        run: cd loki && go build clients/cmd/promtail
 
       # Build Loki DEB Package
       - name: Build Linux DEB Packages
