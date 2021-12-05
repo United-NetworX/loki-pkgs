@@ -43,11 +43,14 @@ jobs:
           ref: ${{ steps.version.outputs.tag }}
           path: loki
       
+      - name: Install xmllint
+        run: sudo apt-get install -y libsystemd-dev
+
       - name: Build loki
-        run: cd loki && go build cmd/loki
+        run: cd loki && make loki
 
       - name: Build promtail
-        run: cd loki && go build clients/cmd/promtail
+        run: cd loki && make promtail
 
       # Build Loki DEB Package
       - name: Build Linux DEB Packages
