@@ -46,8 +46,10 @@ jobs:
       - name: Install libsystemd-dev
         run: sudo apt-get install -y libsystemd-dev
 
-      - name: Build loki
+      - name: ls
         run: ls
+
+      - name: Build loki
         run: go build cmd/loki
 
       - name: Build promtail
