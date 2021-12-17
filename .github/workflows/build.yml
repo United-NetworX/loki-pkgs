@@ -52,8 +52,11 @@ jobs:
       - name: Download promtail
         run: wget https://github.com/grafana/loki/releases/download/${{ steps.version.outputs.tag }}/promtail-linux-amd64.zip
 
-      - name: Unzip Binaries
-        run: unzip *.zip
+      - name: Unzip loki Binaries
+        run: unzip loki-linux-amd64.zip
+
+      - name: Unzip promtail Binaries
+        run: unzip promtail-linux-amd64.zip
 
       # Build Loki DEB Package
       - name: Build loki Linux DEB Packages
