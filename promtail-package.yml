@@ -17,8 +17,3 @@ units:
 scripts:
   "post-install": scripts/post_install_promtail
 user: promtail
-depends:
-  deb-dep:
-    - libsystemd-dev
-  rpm-dep:
-    - systemd-devel
