@@ -4,7 +4,7 @@ meta:
   maintainer: BackInBash
 files:
   "/usr/bin/loki":
-    file: loki
+    file: loki-linux-amd64
     mode: "0755"
     user: "root"
   "/etc/loki/loki.yml":

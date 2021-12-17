@@ -1,3 +1,5 @@
 #!/bin/bash
 
 /bin/chmod +x /usr/bin/promtail
+/bin/systemctl daemon-reload
+/bin/systemctl enable promtail.service

@@ -42,18 +42,18 @@ jobs:
           repository: grafana/loki
           ref: ${{ steps.version.outputs.tag }}
           path: loki
-      
-      - name: Install libsystemd-dev
-        run: sudo apt-get install -y libsystemd-dev
 
-      - name: Get GO Deps
-        run: cd loki && go get .
+      - name: Install Utils
+        run: sudo apt-get install -y wget unzip
 
-      - name: Build loki
-        run: go build ./loki/cmd/loki
+      - name: Download loki
+        run: wget https://github.com/grafana/loki/releases/download/${{ steps.version.outputs.tag }}/loki-linux-amd64.zip
 
-      - name: Build promtail
-        run: go build ./loki/clients/cmd/promtail
+      - name: Download promtail
+        run: wget https://github.com/grafana/loki/releases/download/${{ steps.version.outputs.tag }}/promtail-linux-amd64.zip
+
+      - name: Unzip Binaries
+        run: unzip *.zip
 
       # Build Loki DEB Package
       - name: Build loki Linux DEB Packages
