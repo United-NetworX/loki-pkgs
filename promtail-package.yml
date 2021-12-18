@@ -7,7 +7,7 @@ files:
     file: promtail-linux-amd64
     mode: "0755"
     user: "root"
-  "/etc/loki/promtail.yml":
+  "/etc/promtail/promtail.yml":
     file: ./loki/clients/cmd/promtail/promtail-local-config.yaml
     mode: "0644"
     user: "promtail"
