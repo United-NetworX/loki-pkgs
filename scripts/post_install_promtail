@@ -3,3 +3,9 @@
 /bin/chmod +x /usr/bin/promtail
 /bin/systemctl daemon-reload
 /bin/systemctl enable promtail.service
+
+NAME=$(/bin/hostname -s)
+
+/bin/sed -i -e "s/HOSTNAME/${NAME}/g" /etc/promtail/promtail.yml
+
+/sbin/usermod -a -G systemd-journal promtail

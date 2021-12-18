@@ -8,7 +8,7 @@ files:
     mode: "0755"
     user: "root"
   "/etc/promtail/promtail.yml":
-    file: ./loki/clients/cmd/promtail/promtail-local-config.yaml
+    file: ./config/promtail-systemd.yaml
     mode: "0644"
     user: "promtail"
     keep: true
